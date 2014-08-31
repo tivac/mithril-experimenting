@@ -91,12 +91,12 @@ var form = {
             ]),
             m(".inputs", [
                 m(".price", [
-                    m("input.gold",   { onchange : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "gold")) }),
-                    m("input.silver", { onchange : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "silver")) }),
-                    m("input.copper", { onchange : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "copper")) })
+                    m("input.gold",   { oninput : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "gold")) }),
+                    m("input.silver", { oninput : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "silver")) }),
+                    m("input.copper", { oninput : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "copper")) })
                 ]),
                 m(".quantity", [
-                    m("input.quantity", { onchange : m.withAttr("value", ctrl._onQuantityChange.bind(ctrl)) })
+                    m("input.quantity", { oninput : m.withAttr("value", ctrl._onQuantityChange.bind(ctrl)) })
                 ]),
                 m(".price", [
                     m("p", [
