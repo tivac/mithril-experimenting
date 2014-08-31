@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "description": "Order form implementation via mithril.js",
   "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Patrick Cavit <pcavit@gmail.com> (http://patcavit.com/)",
   "license": "MIT",
   "dependencies": {
