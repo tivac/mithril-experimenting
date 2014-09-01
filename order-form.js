@@ -17,7 +17,7 @@ var Listing = function(data) {
     this.price    = m.prop(data.price);
 };
 
-// Module
+// Controller
 var Controller = function() {
     this.item = new Item();
     
@@ -67,6 +67,14 @@ Controller.prototype = {
         this[type](value);
     },
     
+    // TODO: implement
+    _onCoinScroll : function(type, e) {
+        // true for up, false for down
+        var dir = e.deltaY < 0;
+        
+        console.log(type + (dir ? "+" : "-") + "1");
+    },
+    
     _onQuantityChange : function(value) {
         value = parseInt(value, 10);
         
@@ -78,6 +86,7 @@ Controller.prototype = {
     }
 };
 
+// Module
 var form = {
     controller : Controller,
 
@@ -91,9 +100,18 @@ var form = {
             ]),
             m(".inputs", [
                 m(".price", [
-                    m("input.gold",   { oninput : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "gold")) }),
-                    m("input.silver", { oninput : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "silver")) }),
-                    m("input.copper", { oninput : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "copper")) })
+                    m("input.gold",   {
+                        oninput  : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "gold")),
+                        onwheel : ctrl._onCoinScroll.bind(ctrl, "gold")
+                    }),
+                    m("input.silver", {
+                        oninput : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "silver")),
+                        onwheel : ctrl._onCoinScroll.bind(ctrl, "gold")
+                    }),
+                    m("input.copper", {
+                        oninput : m.withAttr("value", ctrl._onCoinChange.bind(ctrl, "copper")),
+                        onwheel : ctrl._onCoinScroll.bind(ctrl, "gold")
+                    })
                 ]),
                 m(".quantity", [
                     m("input.quantity", { oninput : m.withAttr("value", ctrl._onQuantityChange.bind(ctrl)) })
