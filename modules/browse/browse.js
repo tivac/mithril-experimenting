@@ -12,12 +12,6 @@ export default {
     view : function() {
         "use strict";
         
-        return m(".browse", [
-            m(".nav",
-                [ "home", "browse", "sell", "transactions" ].map(function(section) {
-                    return m("a." + section, { href : "/" + section, class : (section === "browse" ? "active" : "") }, section);
-                })
-            )
-        ]);
+        return m(".browse", "BROWSE");
     }
 };

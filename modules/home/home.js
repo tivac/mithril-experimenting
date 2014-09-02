@@ -1,23 +1,12 @@
 /*global m */
 
-var HomeController = function() {
-      
-    };
-    
-HomeController.prototype = {};
-
-
 export default {
-    controller : HomeController,
+    controller : function() {
+        console.log("HOME CONTROLLER");
+    },
     view : function() {
-        "use strict";
+        console.log("HOME VIEW");
         
-        return m(".home", [
-            m(".nav",
-                [ "home", "browse", "sell", "transactions" ].map(function(section) {
-                    return m("a." + section, { href : "/" + section }, section);
-                })
-            )
-        ]);
+        return m(".home", "HOME");
     }
 };
