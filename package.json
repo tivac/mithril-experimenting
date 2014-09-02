@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "node-static": "^0.7.4"
+  },
+  "scripts": {
+    "server": "static -H \"{\\\"Cache-Control\\\": \\\"no-cache, must-revalidate\\\"}\""
   }
 }
