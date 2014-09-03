@@ -1,14 +1,18 @@
 /*global m */
 
-import layout from "../../layout";
+import page from "../../structure";
 
-export default {
+var browse = {
     controller : function() {
-        console.log("BROWSE CONTROLLER");
     },
-    view : function() {
-        console.log("BROWSE VIEW");
-        
-        return layout(function() { return m(".browse", "BROWSE"); });
+    
+    view : function(ctrl) {
+        return page(browse.content(ctrl));
+    },
+
+    content : function(ctrl) {
+        return m(".browse", "BROWSE");
     }
 };
+
+export default browse;

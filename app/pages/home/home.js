@@ -1,16 +1,18 @@
 /*global m */
 
-import layout from "../../layout";
+import page from "../../structure";
 
-export default {
+var home = {
     controller : function() {
-        console.log("HOME CONTROLLER");
     },
-    view : function() {
-        console.log("HOME VIEW");
-        
-        console.log(layout(function() { return m(".home", "HOME"); }));
-        
-        return layout(function() { return m(".home", "HOME"); });
+    
+    view : function(ctrl) {
+        return page(home.content(ctrl));
+    },
+
+    content : function(ctrl) {
+        return m(".home", "HOME");
     }
 };
+
+export default home;
