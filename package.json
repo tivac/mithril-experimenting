@@ -15,9 +15,8 @@
     "wr": "^1.3.1"
   },
   "scripts": {
-    "start": "npm run watch & npm run server",
     "server": "static -H \"{\\\"Cache-Control\\\": \\\"no-cache, must-revalidate\\\"}\"",
     "compile": "traceur --dir ./app ./out --source-maps --filename --modules=instantiate",
-    "watch": "wr -c 1 --exec --verbose \"npm run compile\" app"
+    "watch": "wr --exec \"npm run compile\" app"
   }
 }
