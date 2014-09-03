@@ -1,16 +1,17 @@
 /*global m */
+"use strict";
 
 import balance from "./components/balance";
 
-var page = function(content) {
-    var html = 
+var page = function(sidebar, content) {
+    var html =
     m(".app", [
         m(".sidebar", [
             balance.view(new balance.controller()),
-            m(".categories")
+            m(".nav", sidebar)
         ]),
         m(".content", [
-            m(".nav", 
+            m(".pages",
                 [ "home", "browse", "sell", "transactions" ].map(function(section) {
                     return m("a." + section, { href : "/" + section, config : m.route }, section);
                 })

@@ -1,4 +1,5 @@
 /*global m */
+"use strict";
 
 import home from "./pages/home/home";
 import browse from "./pages/browse/browse";
@@ -10,8 +11,9 @@ m.route(
     document.body,
     "/",
     {
-        "/"             : home,
-        "/browse"       : browse,
+        "/"                 : home,
+        "/browse"           : browse,
+        "/browse/:category" : browse,
         //"/sell"         : sell,
         //"/transactions" : transactions
     }
