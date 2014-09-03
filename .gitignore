@@ -24,6 +24,12 @@ build/Release
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
 node_modules
 
+# Generated Files
+out
+
+# NPM nonsense
+npm-debug.log
+
 # =========================
 # Operating System Files
 # =========================
@@ -36,7 +42,8 @@ node_modules
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
